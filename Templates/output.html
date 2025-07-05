@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Result - Fraud Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        {% if prediction == "Fraud" %}
+        <div class="card fraud-card result-card">
+            <div class="result-icon fraud-icon"></div>
+            <h1 class="result-title">FRAUD DETECTED</h1>
+            <p class="result-subtitle">High Risk Transaction</p>
+            <div class="fraud-message">
+                <p><strong>⚠️ WARNING:</strong> This transaction shows characteristics consistent with fraudulent activity. Immediate action is recommended.</p>
+            </div>
+            <a href="/" class="btn btn-secondary">Analyze Another Transaction</a>
+        </div>
+        {% else %}
+        <div class="card safe-card result-card">
+            <div class="result-icon safe-icon"></div>
+            <h1 class="result-title">TRANSACTION SAFE</h1>
+            <p class="result-subtitle">Low Risk Transaction</p>
+            <div class="safe-message">
+                <p><strong>✅ VERIFIED:</strong> This transaction appears to be legitimate and shows no signs of fraudulent activity.</p>
+            </div>
+            <a href="/" class="btn btn-secondary">Analyze Another Transaction</a>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

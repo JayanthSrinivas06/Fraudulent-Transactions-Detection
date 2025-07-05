@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Analysis - Fraud Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="card input-card">
+            <h1>🔍 Transaction Analysis</h1>
+            <form action="/predict" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="amt">Transaction Amount ($)</label>
+                        <input type="number" step="0.01" id="amt" name="amt" required placeholder="0.00">
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Cardholder Age</label>
+                        <input type="number" id="age" name="age" required placeholder="25">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="zip">Zip Code</label>
+                        <input type="number" id="zip" name="zip" required placeholder="12345">
+                    </div>
+                    <div class="form-group">
+                        <label for="city_pop">City Population</label>
+                        <input type="number" id="city_pop" name="city_pop" required placeholder="50000">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="lat">Customer Latitude</label>
+                        <input type="number" step="any" id="lat" name="lat" required placeholder="40.7128">
+                    </div>
+                    <div class="form-group">
+                        <label for="long">Customer Longitude</label>
+                        <input type="number" step="any" id="long" name="long" required placeholder="-74.0060">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="merch_lat">Merchant Latitude</label>
+                        <input type="number" step="any" id="merch_lat" name="merch_lat" required placeholder="40.7589">
+                    </div>
+                    <div class="form-group">
+                        <label for="merch_long">Merchant Longitude</label>
+                        <input type="number" step="any" id="merch_long" name="merch_long" required placeholder="-73.9851">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="transaction_hour">Transaction Hour (0-23)</label>
+                        <input type="number" min="0" max="23" id="transaction_hour" name="transaction_hour" required placeholder="14">
+                    </div>
+                    <div class="form-group">
+                        <label for="transaction_day_of_week">Day of Week (0-6)</label>
+                        <input type="number" min="0" max="6" id="transaction_day_of_week" name="transaction_day_of_week" required placeholder="1">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="transaction_month">Transaction Month (1-12)</label>
+                    <input type="number" min="1" max="12" id="transaction_month" name="transaction_month" required placeholder="6">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Analyze Transaction</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
