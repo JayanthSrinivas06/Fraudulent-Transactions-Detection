@@ -87,7 +87,7 @@ Both models are evaluated using metrics like:
 - Precision & Recall
 - Confusion Matrix
 
-XGBoost generally provides better accuracy and recall for fraud detection tasks.
+Random Forest generally provides better accuracy and recall for fraud detection tasks.
 
 ---
 
